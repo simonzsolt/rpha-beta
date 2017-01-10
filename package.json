@@ -1,7 +1,7 @@
 {
   "name": "rpha-beta",
   "version": "1.0.0",
-  "description": "",
+  "description": "test app for new database",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/simonzsolt/rpha-beta/issues"
   },
-  "homepage": "https://github.com/simonzsolt/rpha-beta#readme"
+  "homepage": "https://github.com/simonzsolt/rpha-beta#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.19",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
 }
