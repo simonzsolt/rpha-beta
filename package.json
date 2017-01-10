@@ -1,0 +1,19 @@
+{
+  "name": "rpha-beta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonzsolt/rpha-beta.git"
+  },
+  "author": "jota",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonzsolt/rpha-beta/issues"
+  },
+  "homepage": "https://github.com/simonzsolt/rpha-beta#readme"
+}
