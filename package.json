@@ -23,5 +23,8 @@
     "mongodb": "^2.2.19",
     "morgan": "^1.7.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "reload": "^1.1.0"
   }
 }
