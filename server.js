@@ -16,7 +16,7 @@ var MONGO_DB_URI =  config.get('MONGO_DB_URI');
 
 MongoClient.connect(MONGO_DB_URI, function (err, db) {
      assert.equal(null, err);
-     console.log("Connected correctly to mongodb server");
+     console.log("[server.js] Connected correctly to mongodb server.");
 
      db.close();
 });
@@ -25,7 +25,8 @@ var port = config.get('port') || 3000;
 var host = config.get('host') || 'localhost';
 
 app.listen(port, function () {
-    console.log('Example app listening on ' + host + ':' + port + ', in ' + process.env.NODE_ENV + ' environment.')
+    console.log('[server.js] Example app listening on "http://' + host + ':' + port + '", in ' +
+        process.env.NODE_ENV + '.' + ' environment.')
 })
 
 // app.use(express.static(path.join(__dirname, 'public')));
