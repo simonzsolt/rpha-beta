@@ -4,7 +4,8 @@
   "description": "test app for new database",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --trace-sync-io --throw-deprecation server.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,15 @@
   "homepage": "https://github.com/simonzsolt/rpha-beta#readme",
   "dependencies": {
     "assert": "^1.4.1",
+    "compression": "^1.6.2",
     "express": "^4.14.0",
     "http": "0.0.0",
-    "mongodb": "^2.2.19",
+    "install": "^0.8.4",
+    "mongoose": "^4.7.7",
     "morgan": "^1.7.0",
-    "path": "^0.12.7"
+    "npm": "^4.1.1",
+    "path": "^0.12.7",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "reload": "^1.1.0"
