@@ -10,6 +10,7 @@ var winston = require('winston');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
+
 // logging
 winston.configure({
     // var logger = new(winston.Logger)({
@@ -33,6 +34,7 @@ var Source = require('./public/models/source').Source;
 // routes
 var index = require('./routes/index');
 
+// for performance
 app.use(compression())
 
 // DB connection
@@ -50,8 +52,8 @@ var port = config.get('port') || 3000;
 var host = config.get('host') || 'localhost';
 
 app.listen(port, function() {
-    winston.info('[server.js] Example app listening on "http://' + host + ':' + port + '", in ' +
-        process.env.NODE_ENV + '.' + ' environment.')
+    winston.info('[server.js] Example app listening on "http://' + host + ':' + port +
+    '",\n\t\t\t\t\t        in ' + process.env.NODE_ENV +  ' environment.')
 })
 
 // path to public folder
@@ -59,9 +61,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 
 // use index route
-app.use('/', index)
-
-module.exports = app;
 app.use('/', index)
 
 module.exports = app;

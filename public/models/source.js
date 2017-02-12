@@ -17,7 +17,7 @@ mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var sourceSchema = new Schema({
     "id": String,
-    "printedSources": {
+    "source": {
         "bookId": String,
         "docBibNum": String,
         "docType": String,
@@ -29,7 +29,8 @@ var sourceSchema = new Schema({
         "pageSubId": String,
         "pageSubNote": String,
         "sourceTypeCode": String,
-        "value": String
+        "value": String,
+        "type": String
     },
     "recordType": String,
     "lengthUnit": String,
