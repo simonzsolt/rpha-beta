@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/simonzsolt/rpha-beta#readme",
   "dependencies": {
+    "arangojs": "^5.6.0",
     "assert": "^1.4.1",
     "compression": "^1.6.2",
     "express": "^4.14.0",
