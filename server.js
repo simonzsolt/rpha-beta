@@ -5,10 +5,7 @@ var app = express();
 var http = require('http');
 var path = require('path');
 var config = require('config');
-// var morgan = require('morgan');
 var winston = require('winston');
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
 
 // logging
@@ -27,9 +24,6 @@ winston.configure({
     ]
 });
 
-// require model
-var Verse = require('./public/models/verse').Verse;
-var Source = require('./public/models/source').Source;
 
 // routes
 var index = require('./routes/index');
@@ -38,14 +32,7 @@ var index = require('./routes/index');
 app.use(compression())
 
 // DB connection
-var MONGO_DB_URI = config.get('MONGO_DB_URI');
-mongoose.connect(MONGO_DB_URI);
-var db = mongoose.connection;
-// on connection error
-db.on('error', winston.error.bind(winston, 'connection error:'));
-db.once('open', function() {
-    winston.info('[server.js] Connected correctly to mongodb server.');
-});
+
 
 // server connection config
 var port = config.get('port') || 3000;
