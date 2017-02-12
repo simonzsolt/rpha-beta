@@ -4,12 +4,13 @@ var router = express.Router();
 var app = express();
 var http = require('http');
 var path = require('path');
-var config = require('config');
+var dotenv =  require('dotenv').config();
 var winston = require('winston');
 var arangojs = require('arangojs');
+var db = require('./public/dbConnection.js');
 
 
-// logging
+// logging | winston config
 winston.configure({
     // var logger = new(winston.Logger)({
     transports: [
@@ -25,32 +26,21 @@ winston.configure({
     ]
 });
 
-
 // routes
 var index = require('./routes/index');
 
 // for performance
 app.use(compression())
 
-// DB connection
-// Using a complex connection string with authentication
-var dbHost = process.env.ARANGODB_HOST;
-var dbPort = process.env.ARANGODB_PORT;
-var dbName = process.env.ARANGODB_DB;
-var dbUser = process.env.ARANGODB_USERNAME;
-var dbPass = process.env.ARANGODB_PASSWORD;
-var db = arangojs({
-  url: `http://${username}:${password}@${host}:${port}`,
-  databaseName: database
-});
-
 // server connection config
-var port = config.get('port') || 3000;
-var host = config.get('host') || 'localhost';
+var port = process.env.PORT || 3000;
+var host = process.env.HOST || 'localhost';
 
 app.listen(port, function() {
-    winston.info('[server.js] Example app listening on "http://' + host + ':' + port +
-    '",\n\t\t\t\t\t        in ' + process.env.NODE_ENV +  ' environment.')
+	winston.info('[server.js] Example app listening on "http://' +
+	process.env.HOST + ':' +
+	process.env.PORT +
+	'",\n\t\t\t\t\t        in ' + process.env.NODE_ENV +  ' environment.')
 })
 
 // path to public folder
