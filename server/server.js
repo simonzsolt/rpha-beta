@@ -45,7 +45,6 @@ app.listen(port, function() {
 
 // path to public folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views')));
 
 // use index route
 app.use('/', index)
