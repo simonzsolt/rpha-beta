@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var router = express.Router();
 var winston = require('winston');
 var arangojs = require('arangojs');
@@ -19,7 +20,7 @@ winston.info(data)
 */
 
 // get all verse
-router.route('/verse')
+router.route('/api/verse')
 	.get(function(req, res, next) {
 		collVerse.all()
 			.then(verse => {
@@ -41,7 +42,7 @@ router.route('/api/verse/any')
 	});
 
 // get verse by ID
-router.route('/verse/:id')
+router.route('/api/verse/:id')
 	.get(function(req, res, next) {
 		collVerse.byExample({
 				'id': req.params.id
@@ -56,7 +57,7 @@ router.route('/verse/:id')
 	});
 
 // get source by ID
-router.route('/source/:id')
+router.route('/api/source/:id')
 	.get(function(req, res, next) {
 		collSource.byExample({
 				'id': req.params.id
@@ -71,7 +72,7 @@ router.route('/source/:id')
 	});
 
 // get verse and sources form 'RPHA' graph by verse ID
-router.route('/r/:id')
+router.route('/api/r/:id')
 	.get(function(req, res, next) {
 
 		collVerse.byExample({
@@ -97,7 +98,9 @@ router.route('/r/:id')
 
 router.route('/*')
 	.get(function(req, res, next) {
-		res.send('../src/index.html');
+		// res.sendFile(path.join(__dirname+'/../../src/index.html'));
+		// res.send(404);
+		res.redirect('back')
 	});
 
 module.exports = router;

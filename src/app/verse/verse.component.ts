@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
 import { Verse } from './verse';
-import { AllVerseService } from './all-verse.service';
+import { VerseService } from './verse.service';
 
 @Component({
 	selector: 'app-verse',
@@ -11,20 +11,21 @@ import { AllVerseService } from './all-verse.service';
 })
 export class VerseComponent implements OnInit {
 
-	verse: Verse[];
+	allVerse: Verse[];
 
 	constructor(
-		private verseService: AllVerseService,
+		private verseService: VerseService,
 		private router: Router) { }
 
 
-	getVerse(): void {
+	getAllVerse(): void {
 		this.verseService
-			.getVerse()
-			.then( verse => this.verse = verse )
+			.getAllVerse()
+			.then( allVerse => this.allVerse = allVerse )
 	}
 
-ngOnInit() {
+ngOnInit(): void {
+	this.getAllVerse();
 }
 
 }

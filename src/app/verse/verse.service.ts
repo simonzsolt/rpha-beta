@@ -8,14 +8,14 @@ import { Verse } from './verse'
 
 
 @Injectable()
-export class AllVerseService {
+export class VerseService {
 
 	private headers = new Headers({ 'Content-Type': 'application/json' });
-	private verseUrl = 'api/verse/any';  // URL to web api
+	private verseUrl = 'api/verse';  // URL to web api
 
 	constructor(private http: Http) { }
 
-	getVerse(): Promise<Verse[]> {
+	getAllVerse(): Promise<Verse[]> {
 		return this.http.get(this.verseUrl)
 			.toPromise()
 			.then(response => response.json() as Verse)

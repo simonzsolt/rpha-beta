@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { VerseComponent } from './verse/verse.component';
-import { AllVerseService } from './verse/all-verse.service';
+import { VerseService } from './verse/verse.service';
 
 @NgModule({
 	declarations: [
@@ -19,7 +19,7 @@ import { AllVerseService } from './verse/all-verse.service';
 		HttpModule,
 		AppRoutingModule
 	],
-	providers: [AllVerseService],
+	providers: [VerseService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

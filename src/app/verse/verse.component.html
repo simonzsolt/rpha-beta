@@ -1,10 +1,14 @@
 <p>
 	verse works!
-	<button (click)="getVerse()">Versek</button>
 </p>
 
-<div *ngIf="verse">
-	<pre>
-		{{ verse | json }}
-  </pre>
-</div>
+<!-- <pre>
+	{{  allVerse | json }}
+</pre> -->
+<ol>
+
+	<li *ngFor="let verse of allVerse">
+		<a href=""> {{ verse.id }} </a>
+	</li>
+
+</ol>
