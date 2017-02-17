@@ -18,6 +18,19 @@ winston.info(data)
 );
 */
 
+// get all verse
+router.route('/verse')
+	.get(function(req, res, next) {
+		collVerse.all()
+			.then(verse => {
+				if (verse.count > 0) {
+					res.json(verse._result)
+				} else {
+					res.sendStatus(400)
+				};
+			}, err => winston.error(err.stack));
+	});
+
 // get verse by ID
 router.route('/verse/:id')
 	.get(function(req, res, next) {
