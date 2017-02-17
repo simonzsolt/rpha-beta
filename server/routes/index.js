@@ -19,7 +19,7 @@ winston.info(data)
 */
 
 // get all verse
-router.route('/api/verse')
+router.route('/verse')
 	.get(function(req, res, next) {
 		collVerse.all()
 			.then(verse => {
@@ -41,7 +41,7 @@ router.route('/api/verse/any')
 	});
 
 // get verse by ID
-router.route('/api/verse/:id')
+router.route('/verse/:id')
 	.get(function(req, res, next) {
 		collVerse.byExample({
 				'id': req.params.id
@@ -56,7 +56,7 @@ router.route('/api/verse/:id')
 	});
 
 // get source by ID
-router.route('/api/source/:id')
+router.route('/source/:id')
 	.get(function(req, res, next) {
 		collSource.byExample({
 				'id': req.params.id
@@ -71,7 +71,7 @@ router.route('/api/source/:id')
 	});
 
 // get verse and sources form 'RPHA' graph by verse ID
-router.route('/api/r/:id')
+router.route('/r/:id')
 	.get(function(req, res, next) {
 
 		collVerse.byExample({

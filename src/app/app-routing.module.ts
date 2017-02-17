@@ -8,6 +8,11 @@ const routes: Routes = [
 		path: 'verse',
 		component: VerseComponent
 	},
+	{
+		path: '',
+		redirectTo: '/',
+		pathMatch: 'full'
+	}
 ];
 
 @NgModule({
