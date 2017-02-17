@@ -11,7 +11,7 @@ var routes = [
     {
         path: 'verse',
         component: VerseComponent
-    }
+    },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -6,19 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { VerseComponent } from './verse/verse.component';
+import { AllVerseService } from './verse/all-verse.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VerseComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		VerseComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		AppRoutingModule
+	],
+	providers: [AllVerseService],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

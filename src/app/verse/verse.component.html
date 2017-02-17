@@ -1,3 +1,10 @@
 <p>
 	verse works!
+	<button (click)="getVerse()">Versek</button>
 </p>
+
+<div *ngIf="verse">
+	<pre>
+		{{ verse | json }}
+  </pre>
+</div>

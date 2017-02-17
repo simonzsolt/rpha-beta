@@ -19,7 +19,7 @@ winston.info(data)
 */
 
 // get all verse
-router.route('/verse')
+router.route('/api/verse')
 	.get(function(req, res, next) {
 		collVerse.all()
 			.then(verse => {
@@ -31,8 +31,17 @@ router.route('/verse')
 			}, err => winston.error(err.stack));
 	});
 
+// get a verse at random (for testing)
+router.route('/api/verse/any')
+	.get(function(req, res, next) {
+		collVerse.any()
+			.then(verse => {
+					res.json(verse);
+			}, err => winston.error(err.stack));
+	});
+
 // get verse by ID
-router.route('/verse/:id')
+router.route('/api/verse/:id')
 	.get(function(req, res, next) {
 		collVerse.byExample({
 				'id': req.params.id
@@ -47,7 +56,7 @@ router.route('/verse/:id')
 	});
 
 // get source by ID
-router.route('/source/:id')
+router.route('/api/source/:id')
 	.get(function(req, res, next) {
 		collSource.byExample({
 				'id': req.params.id
@@ -62,7 +71,7 @@ router.route('/source/:id')
 	});
 
 // get verse and sources form 'RPHA' graph by verse ID
-router.route('/r/:id')
+router.route('/api/r/:id')
 	.get(function(req, res, next) {
 
 		collVerse.byExample({

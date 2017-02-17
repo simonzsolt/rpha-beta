@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "",
-    "be": "nodemon server.js",
+    "be": "nodemon server/server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
