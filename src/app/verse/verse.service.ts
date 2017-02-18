@@ -15,12 +15,22 @@ export class VerseService {
 
 	constructor(private http: Http) { }
 
+	// get all verse
 	getAllVerse(): Promise<Verse[]> {
 		return this.http.get(this.verseUrl)
 			.toPromise()
-			.then(response => response.json() as Verse)
-			.catch(this.handleError);
-	}
+			.then( response => response.json() as Verse )
+			.catch( this.handleError );
+	};
+
+	// get verse by ID
+	getVerseById(id: string): Promise<Verse> {
+		const url =  `  ${this.verseUrl}/${id}`
+		return this.http.get(url)
+			.toPromise()
+			.then( response => response.json() as Verse )
+			.catch( this.handleError );
+	};
 
 	private handleError(error: any): Promise<any> {
 		console.error('An error occurred', error); // for demo purposes only

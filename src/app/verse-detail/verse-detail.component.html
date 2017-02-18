@@ -1,0 +1,11 @@
+<div *ngIf="verse">
+	<h2>R {{verse[0].id}}</h2>
+	<div>
+
+		<pre>
+			{{ verse[0] | json }}
+		</pre>
+
+	</div>
+	<button (click)="goBack()">Back</button>
+</div>

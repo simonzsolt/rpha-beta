@@ -17,15 +17,15 @@ export class VerseComponent implements OnInit {
 		private verseService: VerseService,
 		private router: Router) { }
 
-
 	getAllVerse(): void {
 		this.verseService
 			.getAllVerse()
-			.then( allVerse => this.allVerse = allVerse )
-	}
+			.then(allVerse => this.allVerse = allVerse);
+	};
 
-ngOnInit(): void {
-	this.getAllVerse();
-}
+	ngOnInit(): void {
+		this.getAllVerse();
+	};
+
 
 }

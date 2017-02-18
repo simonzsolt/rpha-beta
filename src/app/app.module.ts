@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VerseComponent } from './verse/verse.component';
 import { VerseService } from './verse/verse.service';
+import { VerseDetailComponent } from './verse-detail/verse-detail.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		VerseComponent
+		VerseComponent,
+		VerseDetailComponent
 	],
 	imports: [
 		BrowserModule,

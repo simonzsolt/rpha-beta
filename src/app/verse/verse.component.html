@@ -2,13 +2,10 @@
 	verse works!
 </p>
 
-<!-- <pre>
-	{{  allVerse | json }}
-</pre> -->
 <ol>
 
 	<li *ngFor="let verse of allVerse">
-		<a href=""> {{ verse.id }} </a>
+		<a [attr.href]="'verse/'  + verse.id"> {{ verse.id + '  (' + verse.incipit + ')' }}  </a>
 	</li>
 
 </ol>
