@@ -23,9 +23,9 @@ winston.info(data)
 router.route('/api/verse')
 	.get(function(req, res, next) {
 		collVerse.all()
-			.then(verse => {
-				if (verse.count > 0) {
-					res.json(verse._result)
+			.then(cursor => {
+				if (cursor.count > 0) {
+					cursor.all().then( val => res.json(val) )
 				} else {
 					res.sendStatus(400)
 				};
