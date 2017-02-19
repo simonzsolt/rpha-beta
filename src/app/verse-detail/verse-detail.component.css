@@ -1,0 +1,9 @@
+.verse-detail-container {
+	display: inline-block;
+	overflow: hidden;
+	/*border-style: solid;*/
+   	border-color: aqua;
+	padding: 25px;
+	vertical-align: top;
+	margin: 20px 0px 20px 20px ;
+}

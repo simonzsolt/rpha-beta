@@ -1,11 +1,173 @@
 <div *ngIf="verse">
-	<h2>R {{verse[0].id}}</h2>
-	<div>
 
-		<pre>
-			{{ verse[0] | json }}
-		</pre>
+	<div class="verse-detail-container">
+
+		<h2>R {{verse.id}}</h2>
+
+		<p> Key: {{ verse._key }}</p>
+		<p> _Id: {{ verse._id }} </p>
+		<p> RecordType: {{ verse.recordType }} </p>
+
+
+		<p> Acrostic state: {{ verse.acrosticState }} </p>
+		<p> Colophon state: {{ verse.colophonState }} </p>
+
+		<p>
+			Date:
+		</p>
+		<ul *ngFor="let date of verse.date">
+			<li>
+				{{ date }}
+			</li>
+		</ul>
+
+		<p> Date precision: {{ verse.datePrecision }} </p>
+
+		<div *ngIf="verse.denomination">
+			<p>
+				Denomination:
+			</p>
+			<ul>
+				<li> Catholic: {{ verse.denomination.catholic }} </li>
+				<li> Evangelical: {{ verse.denomination.evangelical }} </li>
+				<li> Protestant: {{ verse.denomination.protestant }} </li>
+				<li> Reformed: {{ verse.denomination.reformed }} </li>
+				<li> Sabbatarian: {{ verse.denomination.sabbatarian }} </li>
+				<li> Unitarian: {{ verse.denomination.unitarian }} </li>
+			</ul>
+		</div>
+
+		<p>
+			Genre:
+		</p>
+		<ul *ngFor="let genre of verse.genre">
+			<li>
+				{{ genre }}
+			</li>
+		</ul>
+
+		<p>
+			Incipit: {{ verse.incipit }}
+		</p>
+
+		<p>
+			Integrity: {{ verse.integrity }}
+		</p>
+
+		<p>
+			Length:
+		</p>
+		<ul *ngFor="let length of verse.length">
+			<li>
+				{{ length }}
+			</li>
+		</ul>
+
+		<p>
+			Length unit: {{ verse.lengthUnit }}
+		</p>
+
+		<p>
+			Edition of melody:
+		</p>
+		<ul *ngFor="let melody of verse.melodyEd">
+			<li>
+				{{ melody }}
+			</li>
+		</ul>
+
+		<p>
+			Metre schema:
+		</p>
+		<ul *ngFor="let metre of verse.metreSchema">
+			<li>
+				{{ metre }}
+			</li>
+		</ul>
+
+		<p>
+			Metre type: {{ verse.metreType}}
+		</p>
+
+		<p>
+			Rhyme scheme: {{ verse.rhymeScheme }}
+		</p>
+
+		<p>
+			Shared melody bases:
+		</p>
+		<ul *ngFor="let baseMelody of verse.sharedMelodyBases">
+			<li>
+				{{ baseMelody }}
+			</li>
+		</ul>
+
+		<p>
+			Shared melody targets:
+		</p>
+		<ul *ngFor="let targetMelody of verse.sharedMelodyTargets">
+			<li>
+				{{ targetMelody }}
+			</li>
+		</ul>
+
+		<p>
+			Signature: {{ verse.signature }}
+		</p>
+
+		<p>
+			Song: {{ verse.song }}
+		</p>
+
+		<p>
+			Syllable count: {{ verse.syllNum }}
+		</p>
+
+		<p>
+			Title:
+		</p>
+		<ul *ngFor="let title of verse.title">
+			<li>
+				{{ title }}
+			</li>
+		</ul>
+
+		<p>
+			Tradition: {{ verse.tradition }}
+		</p>
+
+		<p>
+			Sources:
+		</p>
+		<ul *ngFor="let source of verse.source">
+			<li>
+				<p> Book ID: {{ source.bookID }} </p>
+				<p> Item sub ID: {{ source.itemSubId }} </p>
+				<p> Item sub note: {{ source.itemSubNote }} </p>
+				<p> Item main ID: {{ source.itemMainId }} </p>
+				<p> Item ID: {{ source.itemId }} </p>
+				<p> Document Biliographic Number: {{ source.docBibNum }} </p>
+				<p> Document type: {{ source.docType }} </p>
+				<p> Page sub ID: {{ source.pageSubId }} </p>
+				<p> Page sub note: {{ source.pageSubNote }} </p>
+				<p> Page: {{ source.page }} </p>
+				<p> Source type code: {{ source.sourceTypeCode }} </p>
+				<p> Source: {{ source.value }} </p>
+				<p> Type: {{ source.type }} </p>
+				<p> Source ID: {{ source.sourceId }} </p>
+				<p> Url:
+					<a [attr.href]="source.url"> {{ source.url }} </a>
+				</p>
+			</li>
+		</ul>
 
 	</div>
-	<button (click)="goBack()">Back</button>
+
+	<div class="verse-detail-container">
+		<pre>
+			{{ verse | json }}
+		</pre>
+	</div>
 </div>
+
+<button (click)="goBack()">Back</button>

@@ -49,7 +49,7 @@ router.route('/api/verse/:id')
 			})
 			.then(verse => {
 				if (verse.count > 0) {
-					res.json(verse._result)
+					res.json(verse._result[0])
 				} else {
 					res.sendStatus(400)
 				};
