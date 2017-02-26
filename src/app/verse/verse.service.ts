@@ -11,7 +11,7 @@ import { Verse } from './verse'
 export class VerseService {
 
 	private headers = new Headers({ 'Content-Type': 'application/json' });
-	private verseUrl = 'api/verse';  // URL to web api
+	private verseUrl = ' foxx/verse';  // URL to web api
 
 	constructor(private http: Http) { }
 
